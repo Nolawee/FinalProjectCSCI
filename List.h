@@ -24,11 +24,12 @@ public:
 	node* Merge(node* a, node* b);
 	node* MergeSort(node *head);
 	void deleteNode(node* head, int deletedNode);
-	void printPath(node* head);
-	node* addNode(node* previous, int nodeData);
+	void printPath();
+	void addNode(int nodeData);
 	void insertnode(node* head, int newNode, int previousNode);
 	int LinkedListFindMax(node *head);
 	int LinkedListFindMin(node* head);
+	void setHead(int startValue);
 private:
 	node *head;
 	node *current;
