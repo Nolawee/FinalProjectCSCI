@@ -5,6 +5,13 @@
 #include "List.h"
 using namespace std;
 
+void List::setHead(int startValue){
+    node *n = new node;
+    n->data = startValue;
+    head = n;
+    current = head;
+}
+
 node * List::ReverseLinkedList(node *head){
     node *prev = NULL;
     node *next;
@@ -96,12 +103,12 @@ void List::printPath(node* head)
 	cout << "=================" << endl;
 }
 
-node* List::addNode(node* previous, int nodeData)
+void List::addNode(int nodeData)
 {
 	node* n = new node;
 	n->data = nodeData;
-	previous->next = n;
-	return n;
+	current->next = n;
+	current = current->next;
 }
 
 void List::insertnode(node* head, int newNode, int previousNode)
