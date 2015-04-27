@@ -19,16 +19,16 @@ struct node
 class List
 {
 public:
-	node* ReverseLinkedList(node *head);
-	node * split(node* head);
+	node* ReverseLinkedList();
+	node * split();
 	node* Merge(node* a, node* b);
-	node* MergeSort(node *head);
-	void deleteNode(node* head, int deletedNode);
+	node* MergeSort();
+	void deleteNode(int deletedNode);
 	void printPath();
 	void addNode(int nodeData);
-	void insertnode(node* head, int newNode, int previousNode);
-	int LinkedListFindMax(node *head);
-	int LinkedListFindMin(node* head);
+	void insertnode(int newNode, int previousNode);
+	int LinkedListFindMax();
+	int LinkedListFindMin();
 	void setHead(int startValue);
 private:
 	node *head;

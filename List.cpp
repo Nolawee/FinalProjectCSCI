@@ -12,7 +12,7 @@ void List::setHead(int startValue){
     current = head;
 }
 
-node * List::ReverseLinkedList(node *head){
+node * List::ReverseLinkedList(){
     node *prev = NULL;
     node *next;
 
@@ -25,7 +25,7 @@ node * List::ReverseLinkedList(node *head){
     return prev;
 }
 
-node * List::split(node* head)
+node * List::split()
 {
     node* fast = head;
     node* slow = head;
@@ -59,16 +59,16 @@ node* List::Merge(node* a, node* b)
     return result;
 }
 
-node* List::MergeSort(node *head)
+node* List::MergeSort()
 {
     if(!head || !head->next)
         return head;
-    node* second = split(head);
-    head = MergeSort(second);
+    node* second = split();
+    head = MergeSort();
     return Merge(head, second);
 }
 
-void List::deleteNode(node* head, int deletedNode)
+void List::deleteNode(int deletedNode)
 {
 	node *n = new node;
 	node *p = new node;
@@ -90,7 +90,7 @@ void List::deleteNode(node* head, int deletedNode)
 	}
 }
 
-void List::printPath(node* head)
+void List::printPath()
 {
 	node *n;
 	n = head;
@@ -111,7 +111,7 @@ void List::addNode(int nodeData)
 	current = current->next;
 }
 
-void List::insertnode(node* head, int newNode, int previousNode)
+void List::insertnode(int newNode, int previousNode)
 {
 	node *n = new node;
 	n = head;
@@ -132,7 +132,7 @@ void List::insertnode(node* head, int newNode, int previousNode)
 	}
 }
 
-int List::LinkedListFindMax(node *head)
+int List::LinkedListFindMax()
 {
 	head = head ->next;
 	int max = head->data;
@@ -153,7 +153,7 @@ int List::LinkedListFindMax(node *head)
 	return max;
 }
 
-int List::LinkedListFindMin(node* head)
+int List::LinkedListFindMin()
 {
 	head = head->next;
 	int min = head->data;
