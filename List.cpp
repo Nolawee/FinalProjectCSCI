@@ -12,20 +12,28 @@ void List::setHead(int startValue){
     current = head;
 }
 
-node * List::ReverseLinkedList(){
-    node *prev = NULL;
-    node *next;
-
-    while (head) {
-        next = head->next;
-        head->next = prev;
-        prev = head;
-        head = next;
+void List::ReverseLinkedList()
+{
+    node* prev = NULL;
+    node* curr = head;
+    node* next;
+    while(curr != NULL)
+    {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
     }
-    return prev;
+    head = prev;
+    printPath();
 }
+/*
+void List::ReverseLinkedList()
+{
 
-node * List::split()
+}
+*/
+node* List::split(node* head)
 {
     node* fast = head;
     node* slow = head;
@@ -59,12 +67,12 @@ node* List::Merge(node* a, node* b)
     return result;
 }
 
-node* List::MergeSort()
+node* List::MergeSort(node *head)
 {
     if(!head || !head->next)
         return head;
-    node* second = split();
-    head = MergeSort();
+    node* second = split(head);
+    head = MergeSort(second);
     return Merge(head, second);
 }
 
@@ -134,43 +142,47 @@ void List::insertnode(int newNode, int previousNode)
 
 int List::LinkedListFindMax()
 {
-	head = head ->next;
-	int max = head->data;
-	while(head->next != NULL)
+	//head = head ->next;
+	node* temp = head;
+	int max = temp->data;
+	while(temp->next != NULL)
 	{
-		if(head->data > max){
-			max = head->data;
+		if(temp->data > max){
+			max = temp->data;
 		}
-		head = head->next;
+		temp = temp->next;
 	}
-	if(head -> next == NULL)
+	if(temp -> next == NULL)
 	{
-		if(head->data > max)
+		if(temp->data > max)
 		{
-			max = head->data;
+			max = temp->data;
 		}
 	}
+	cout<<max<<endl;
 	return max;
 }
 
 int List::LinkedListFindMin()
 {
-	head = head->next;
-	int min = head->data;
-	while(head->next != NULL)
+	//head = head->next;
+	node* temp = head;
+	int min = temp->data;
+	while(temp->next != NULL)
 	{
-		if(head->data<min)
+		if(temp->data<min)
 		{
-			min = head->data;
+			min = temp->data;
 		}
-		head = head->next;
+		temp = temp->next;
 	}
-	if(head->next == NULL)
+	if(temp->next == NULL)
 	{
-		if(head->data < min)
+		if(temp->data < min)
 		{
-			min = head->data;
+			min = temp->data;
 		}
 	}
+	cout<<min<<endl;
 	return min;
 }

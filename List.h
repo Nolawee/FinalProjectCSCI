@@ -19,10 +19,10 @@ struct node
 class List
 {
 public:
-	node* ReverseLinkedList();
-	node * split();
+	void ReverseLinkedList();
+	node * split(node* head);
 	node* Merge(node* a, node* b);
-	node* MergeSort();
+	node* MergeSort(node* head);
 	void deleteNode(int deletedNode);
 	void printPath();
 	void addNode(int nodeData);

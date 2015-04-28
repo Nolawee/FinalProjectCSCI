@@ -9,6 +9,7 @@ void displayMenu();
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
+
 	string command;
 	cout<<"Hello and welcome to the Linked list creator."<<endl;
 	cout << "What value would you like your linked list to start with?" << endl;
@@ -52,19 +53,27 @@ int main(int argc, char *argv[]) {
 		  	x.insertnode(newNode, prevNode);
 		  }
 		  else if( command == "3"){
-		  	cout<<"PlaceHolder"<<endl;
+		  	int deletedNode;
+		  	cout<<"What node would you like to delete?"<<endl;
+            string deletedNodeString;
+            getline(cin,deletedNodeString);
+            deletedNode = stoi(deletedNodeString);
+            x.deleteNode(deletedNode);
 		  }
 		  else if( command == "4"){
 		  	cout<<"PlaceHolder"<<endl;
+		  	//x.MergeSort(head);
+
 		  }
 		  else if( command == "5"){
-		  	cout<<"PlaceHolder"<<endl;
+		  	cout<<"Reversing List"<<endl;
+		  	x.ReverseLinkedList();
 		  }
 		  else if( command == "6"){
-		  	cout<<"PlaceHolder"<<endl;
+		  	x.LinkedListFindMax();
 		  }
 		  else if( command == "7"){
-		  	cout<<"PlaceHolder"<<endl;
+		  	x.LinkedListFindMin();
 		  }
 		  displayMenu();
 		  getline(cin,command);
