@@ -8,18 +8,12 @@ void displayMenu();
 
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
-
-	string command;
-	cout<<"Hello and welcome to the Linked list creator."<<endl;
-	cout << "What value would you like your linked list to start with?" << endl;
-	int startValue;
-	string initValue;
-	cin >> initValue;
+void actualFunction(string initValue){
+    string command;
+    int startValue;
 	startValue = stoi(initValue);
 	List x;
 	x.setHead(startValue);
-
     cout << "Would you like to add another value?" << endl;
     cout << "If yes, type in another value. If not, type 'no'" << endl;
     cin >> initValue;
@@ -79,6 +73,25 @@ int main(int argc, char *argv[]) {
 		  getline(cin,command);
 	}
 	cout<<"Goodbye!"<<endl;
+}
+
+int main(int argc, char *argv[]){
+    cout<<"Hello and welcome to the Linked list creator."<<endl;
+	bool proceed = false;
+	while(proceed == false){
+        string initValue;
+        cout << "What value would you like your linked list to start with?" << endl;
+        cin >> initValue;
+        bool isNumber = (initValue.find_first_not_of( "0123456789" ) == string::npos);
+        if(isNumber == true){
+            actualFunction(initValue);
+            proceed = true;
+        }
+        else{
+            cout << "You must enter a number" <<endl;
+        }
+	}
+
 	return 0;
 }
 void displayMenu(){
