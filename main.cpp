@@ -28,7 +28,7 @@ void actualFunction(string initValue){
 
 	x.printPath();
 
-	while( command != "8"){
+	while( command != "9"){
 		  if( command == "1"){
 		  	x.printPath();
 		  }
@@ -69,6 +69,10 @@ void actualFunction(string initValue){
 		  else if( command == "7"){
 		  	x.LinkedListFindMin();
 		  }
+		  else if(command == "8")
+		  {
+		  	cout << "The sum is" << x.LinkedListSum() << endl;
+		  }
 		  displayMenu();
 		  getline(cin,command);
 	}
@@ -103,5 +107,6 @@ void displayMenu(){
     cout << "5. Reverse List" << endl;
     cout << "6. Find Max Value in List" << endl;
     cout << "7. Find Min Value in List" << endl;
-    cout << "8. Quit" << endl;
+    cout << "8. Sum the List" << endl;
+    cout << "9. Quit" << endl;
 }

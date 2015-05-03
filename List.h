@@ -29,6 +29,7 @@ public:
 	void insertnode(int newNode, int previousNode);
 	int LinkedListFindMax();
 	int LinkedListFindMin();
+	int LinkedListSum();
 	void setHead(int startValue);
 private:
 	node *head;
