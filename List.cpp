@@ -186,3 +186,14 @@ int List::LinkedListFindMin()
 	cout<<min<<endl;
 	return min;
 }
+int List::LinkedListSum()
+{
+	node* x = head
+	int sum = 0;
+	while(x != NULL)
+	{
+		sum = sum + x->data;
+		x = x->next;
+	}
+	return x;
+}
