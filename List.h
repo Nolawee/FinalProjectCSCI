@@ -30,6 +30,7 @@ public:
 	int LinkedListFindMax();
 	int LinkedListFindMin();
 	void setHead(int startValue);
+	int LinkedListFindRange();
 private:
 	node *head;
 	node *current;
