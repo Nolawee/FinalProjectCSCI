@@ -186,3 +186,10 @@ int List::LinkedListFindMin()
 	cout<<min<<endl;
 	return min;
 }
+
+//A simple range function added that gives us the range by subtracting the maximum value by the minimum
+int List::LinkedListFindRange()
+{
+	
+	return max - min;
+}
